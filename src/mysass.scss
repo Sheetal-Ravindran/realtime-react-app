@@ -1,0 +1,41 @@
+
+$myColor: red;
+$reuseColor:blueviolet;
+$impTextColor:rgb(47, 29, 56);
+$myStyling: rgb(184, 204, 95);
+
+.nesting {
+  color: $myColor;
+}
+
+.reuse{
+ color: $reuseColor;
+}
+
+@mixin important-text{
+  color: $impTextColor;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid $reuseColor;
+  
+}
+.style {
+    @include important-text;
+    background-color: $myStyling;
+  }
+
+nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      display: inline-block;
+    }
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+  }
