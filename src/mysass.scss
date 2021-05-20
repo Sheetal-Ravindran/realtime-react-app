@@ -4,7 +4,7 @@ $reuseColor:blueviolet;
 $impTextColor:rgb(47, 29, 56);
 $myStyling: rgb(184, 204, 95);
 
-.nesting {
+.navigation-title {
   color: $myColor;
 }
 
@@ -19,12 +19,12 @@ $myStyling: rgb(184, 204, 95);
   border: 1px solid $reuseColor;
   
 }
-.style {
+.container {
     @include important-text;
     background-color: $myStyling;
   }
 
-nav {
+.navigation {
     ul {
       margin: 0;
       padding: 0;

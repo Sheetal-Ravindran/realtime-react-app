@@ -4,9 +4,8 @@ class PersonalInfo extends React.Component {
 
   constructor() {
     super();
-    this.state = { name:'', bgColor:''}
+    this.state = { name:'', backgroundColor:''}
     this.onInputChange = this.onInputChange.bind(this);
-    this.validateField = this.validateField.bind(this);
   }   
 
   onInputChange(event) {
@@ -16,33 +15,33 @@ class PersonalInfo extends React.Component {
   }
     
   validateField(fieldName, value) {
-    let backgroungColor = this.state.bgColor;
+    let backgroundColor = this.state.backgroundColor;
     switch(fieldName) {
       case 'name':
         if (!value.match(/^[a-zA-Z ]*$/)) {         
-          backgroungColor = 'red';
+          backgroundColor = 'red';
         }
-        else{
-          backgroungColor='';
+        else  {
+          backgroundColor='';
         }
         break;
-        default:
+      default:
         break;
     }
 
     this.setState({
         name: value,
-        bgColor: backgroungColor,
+        backgroundColor: backgroundColor,
       });
     }
 
-  render(){
-    return (
+  render()  {
+    return  (
       <div>
         <label className="label" htmlFor="name">
-          Enter {this.props.lable} Name
+          Enter {this.props.label} Name
         </label>
-        <input id="name" type="text" name="name" value={this.state.name} onChange={this.onInputChange} value={this.state.name} style={{backgroundColor:this.state.bgColor}} />                                      
+        <input id="name" type="text" name="name" value={this.state.name} onChange={this.onInputChange} style={{backgroundColor:this.state.backgroundColor}} />                                      
       </div>                   
     );
   }

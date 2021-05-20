@@ -5,25 +5,22 @@ import PersonalInfo from './PersonalInfo';
 
 class App extends React.Component {
  
-
   render() {
     return (
       <div>
-        <div className="style">
+        <div className="container">
           <h1>Hello!</h1>
           <p>This is my first Saas project!.</p>
         </div>
-        {/* reuse component */}
         <div className="validation">   
           <h2 className="reuse">Component Reuse</h2>      
-          <PersonalInfo lable = "First" />
-          <PersonalInfo lable = "Second" />
+          <PersonalInfo label = "First" />
+          <PersonalInfo label = "Second" />
           <button>Submit</button>
         </div>
-
         <div>
-          <h1 className="nesting">Nesting Example</h1>
-          <nav>
+          <h1 className="navigation-title">Nesting Example</h1>
+          <nav className="navigation">
             <ul>
               <li><a href="https://google.com">HTML</a></li>
               <li><a href="https://google.com">CSS</a></li>
