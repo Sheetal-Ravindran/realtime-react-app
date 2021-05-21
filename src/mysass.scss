@@ -1,0 +1,43 @@
+$highlight: red;
+$secondary:blueviolet;
+$primary:rgb(47, 29, 56);
+$container-background: rgb(184, 204, 95);
+
+@mixin default-font {
+  color: $primary;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid $secondary; 
+}
+
+.navigation-title {
+  color: $highlight;
+}
+
+.reuse  {
+ color: $secondary;
+}
+
+
+.container {
+    @include default-font;
+    background-color: $container-background;
+  }
+
+.navigation {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+  }
