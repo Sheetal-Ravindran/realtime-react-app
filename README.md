@@ -1,3 +1,1 @@
 # realtime-react-app
-
-test

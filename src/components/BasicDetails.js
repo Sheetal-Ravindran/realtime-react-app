@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PersonalInfo extends React.Component {
+class BasicDetails extends React.Component {
 
   constructor() {
     super();
@@ -39,7 +39,7 @@ class PersonalInfo extends React.Component {
     return  (
       <div>
         <label className="label" htmlFor="name">
-          Enter {this.props.label} Name
+          {this.props.label} 
         </label>
         <input id="name" type="text" name="name" value={this.state.name} onChange={this.onInputChange} style={{backgroundColor:this.state.backgroundColor}} />                                      
       </div>                   
@@ -47,4 +47,4 @@ class PersonalInfo extends React.Component {
   }
 };
 
-export default PersonalInfo;
+export default BasicDetails;
