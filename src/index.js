@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './mysass.scss';
-import BasicDetails from './components/BasicDetails';
+import './main.scss';
+import FormInput from './components/FormInput';
 
 class App extends React.Component {
  
@@ -9,8 +9,8 @@ class App extends React.Component {
     return (
       <div className="font-loader"> 
           <h2 className="reuse">Basic Details</h2>      
-          <BasicDetails label = "Enter First Name " />
-          <BasicDetails label = "Enter Last Name " />
+          <FormInput label = "Enter First Name " />
+          <FormInput label = "Enter Last Name " />
           <div>
             <button>Submit</button>
           </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class BasicDetails extends React.Component {
+class FormInput extends React.Component {
 
   constructor() {
     super();
@@ -35,16 +35,25 @@ class BasicDetails extends React.Component {
       });
     }
 
-  render()  {
-    return  (
+  render()  {   
+    
+    const isLabelEmpty = this.props.label === " " ? true : false; 
+    const renderLabel = () => {
+      if (isLabelEmpty) {
+        return null;
+      } 
+      else {
+        return <label className="label" htmlFor="name"> {this.props.label} </label>;
+      }
+    }  
+
+    return(
       <div>
-        <label className="label" htmlFor="name">
-          {this.props.label} 
-        </label>
+        {renderLabel()}
         <input id="name" type="text" name="name" value={this.state.name} onChange={this.onInputChange} style={{backgroundColor:this.state.backgroundColor}} />                                      
-      </div>                   
+      </div>
     );
   }
 };
 
-export default BasicDetails;
+export default FormInput;
