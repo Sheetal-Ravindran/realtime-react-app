@@ -51,7 +51,7 @@ class FormInput extends React.Component {
    
     const isLabelEmpty = this.props.label === " " ? true : false; 
 
-    const renderLabel = () => {
+    const renderInput = () => {
       if (isLabelEmpty) {
         return null;
       } 
@@ -71,7 +71,7 @@ class FormInput extends React.Component {
 
     return(
       <form className={useStyles.root} noValidate autoComplete="off">
-        {renderLabel()}      
+        {renderInput()}      
       </form>
     );
   }
