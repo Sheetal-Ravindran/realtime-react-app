@@ -1,10 +1,12 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
 class FormInput extends React.Component {
 
   constructor() {
     super();
-    this.state = { name:'', backgroundColor:''}
+    this.state = { name:'', errorMessage:''}
     this.onInputChange = this.onInputChange.bind(this);
   }   
 
@@ -12,46 +14,65 @@ class FormInput extends React.Component {
     let name = event.target.name;
     let value = event.target.value;
     this.validateField(name, value);
+    console.log("onInputChange");
   }
     
   validateField(fieldName, value) {
-    let backgroundColor = this.state.backgroundColor;
+
+    let errorMessage = this.state.errorMessage;
     switch(fieldName) {
       case 'name':
         if (!value.match(/^[a-zA-Z ]*$/)) {         
-          backgroundColor = 'red';
+          errorMessage = 'Only Alphabets allowed';
         }
         else  {
-          backgroundColor='';
+          errorMessage='';
         }
         break;
       default:
-        break;
+        break;      
     }
 
     this.setState({
         name: value,
-        backgroundColor: backgroundColor,
+        errorMessage: errorMessage,
       });
     }
 
-  render()  {   
-    
+  render()  {  
+
+    const useStyles = makeStyles((theme) => ({
+      root: {
+        '& > *': {
+          margin: theme.spacing(1),
+        },
+      },
+    }));
+   
     const isLabelEmpty = this.props.label === " " ? true : false; 
+
     const renderLabel = () => {
       if (isLabelEmpty) {
         return null;
       } 
       else {
-        return <label className="label" htmlFor="name"> {this.props.label} </label>;
+        return  <TextField 
+          id="outlined-error-helper-text" 
+          name ="name" 
+          label={this.props.label} 
+          variant="outlined"
+          value={this.state.name} 
+          onChange={this.onInputChange} 
+          helperText={this.state.errorMessage} 
+          size="small" 
+          margin='dense'/>;
       }
     }  
 
     return(
-      <div>
-        {renderLabel()}
-        <input id="name" type="text" name="name" value={this.state.name} onChange={this.onInputChange} style={{backgroundColor:this.state.backgroundColor}} />                                      
-      </div>
+      <form className={useStyles.root} noValidate autoComplete="off">
+        {renderLabel()}      
+      </form>
     );
   }
 };
