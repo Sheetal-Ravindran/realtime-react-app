@@ -49,13 +49,8 @@ class FormInput extends React.Component {
       },
     }));
    
-    const isLabelEmpty = this.props.label === " " ? true : false; 
-
     const renderInput = () => {
-      if (isLabelEmpty) {
-        return null;
-      } 
-      else {
+      if (this.props.label) {
         return  <TextField 
           id="outlined-error-helper-text" 
           name ="name" 
@@ -66,6 +61,9 @@ class FormInput extends React.Component {
           helperText={this.state.errorMessage} 
           size="small" 
           margin='dense'/>;
+      } 
+      else {
+        return null;
       }
     }  
 
