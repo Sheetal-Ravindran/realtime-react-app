@@ -1,4 +1,6 @@
-# Run Application
+# Realtime React Application
+
+## Run Application
 
 1. npm install
 2. npm start

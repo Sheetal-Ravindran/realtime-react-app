@@ -1,27 +1,25 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
 
 class FormInput extends React.Component {
 
   constructor() {
     super();
-    this.state = { name:'', errorMessage:''}
+    this.state = { name:'', errorMessage:'' }
     this.onInputChange = this.onInputChange.bind(this);
   }   
 
   onInputChange(event) {
-    let name = event.target.name;
+    let type = event.target.type;
     let value = event.target.value;
-    this.validateField(name, value);
-    console.log("onInputChange");
+    this.validateField(type, value);
   }
     
-  validateField(fieldName, value) {
+  validateField(type, value) {
 
     let errorMessage = this.state.errorMessage;
-    switch(fieldName) {
-      case 'name':
+    switch(type) {
+
+      case 'text':
         if (!value.match(/^[a-zA-Z ]*$/)) {         
           errorMessage = 'Only Alphabets allowed';
         }
@@ -35,40 +33,30 @@ class FormInput extends React.Component {
 
     this.setState({
         name: value,
-        errorMessage: errorMessage,
+        errorMessage: errorMessage
       });
     }
 
   render()  {  
 
-    const useStyles = makeStyles((theme) => ({
-      root: {
-        '& > *': {
-          margin: theme.spacing(1),
-        },
-      },
-    }));
-   
     const renderInput = () => {
       if (this.props.label) {
-        return  <TextField 
-          id="outlined-error-helper-text" 
-          name ="name" 
-          label={this.props.label} 
-          variant="outlined"
-          value={this.state.name} 
-          onChange={this.onInputChange} 
-          helperText={this.state.errorMessage} 
-          size="small" 
-          margin='dense'/>;
+        return  <div  className="form-group">
+          <input className="input-field"  type={this.props.text}  value={this.state.name} onChange={this.onInputChange} />   
+          <label className="label-text">{this.props.label}</label>
+          <br></br>
+          <span className="error-focus">{this.state.errorMessage}</span>
+          <br></br>     
+        </div>
+        
       } 
-      else {
+      else {  
         return null;
       }
     }  
 
     return(
-      <form className={useStyles.root} noValidate autoComplete="off">
+      <form>
         {renderInput()}      
       </form>
     );
