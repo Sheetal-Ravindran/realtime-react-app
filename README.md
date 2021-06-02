@@ -1,4 +1,5 @@
 # Realtime React Application
+This application validates First and Last Name of a User.
 
 ## Run Application
 
