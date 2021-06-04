@@ -4,27 +4,24 @@ class FormInput extends React.Component {
 
   constructor() {
     super();
-    this.state = { name:'', errorMessage:'' }
-    this.onInputChange = this.onInputChange.bind(this);
+    this.state={ name:'', errorMessage:'' }
+    this.onInputChange=this.onInputChange.bind(this);
   }   
 
   onInputChange(event) {
-    let type = event.target.type;
-    let value = event.target.value;
+    let type=event.target.type;
+    let value=event.target.value;
     this.validateField(type, value);
   }
     
   validateField(type, value) {
 
-    let errorMessage = this.state.errorMessage;
+    let errorMessage='';
     switch(type) {
 
       case 'text':
         if (!value.match(/^[a-zA-Z ]*$/)) {         
-          errorMessage = 'Only Alphabets allowed';
-        }
-        else  {
-          errorMessage='';
+          errorMessage='Only Alphabets allowed';
         }
         break;
       default:
@@ -42,13 +39,12 @@ class FormInput extends React.Component {
     const renderInput = () => {
       if (this.props.label) {
         return  <div  className="form-group">
-          <input className="input-field"  type={this.props.text}  value={this.state.name} onChange={this.onInputChange} />   
           <label className="label-text">{this.props.label}</label>
+          <input className="input-field"  type={this.props.text}  value={this.state.name} onChange={this.onInputChange} />           
           <br></br>
           <span className="error-focus">{this.state.errorMessage}</span>
           <br></br>     
-        </div>
-        
+        </div>     
       } 
       else {  
         return null;

@@ -1,58 +1,9 @@
+@import "formInput";
 $highlight: rgb(18, 18, 146);
-$errorHighlight: red;
-$textcolor: #333;
-$borderColor: #ccc;
-$labelColor: #aaa;
 $buttonColor: white;
 
-.font-loader {
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-.reuse  {
+.header  {
  color: $highlight;
-}
-
-.form-group {
-	margin-top: 12px;
-  display: inline-block;
-  position: relative;
-}
-
-.input-field {
-  width: 250px;
-  padding: 4px 0;
-  font: 14px/24px "Lato", Arial, sans-serif;
-  color: $textcolor;
-  box-sizing: border-box;
-  letter-spacing: 1px;
-  border: 2px solid $borderColor;
-  border-bottom: 1px solid $borderColor;
-  background: transparent;
-}
-
-.label-text {
-  text-align: left;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  top: 9px;
-  color: $labelColor;
-  z-index: -1;
-  letter-spacing: 0.5px;
-}
-
-.input-field:focus ~ .label-text
- {
-  top: -16px;
-  font-size: 16px;
-  color: $highlight;
-  transition: 0.3s;
-}
-
-.error-focus{
-  color: $errorHighlight;
-  font-size: 12px
 }
 
 .submit-btn {

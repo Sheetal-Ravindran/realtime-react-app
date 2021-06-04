@@ -9,9 +9,9 @@ class App extends React.Component {
    
     return (
       <div className="validation"> 
-          <h2 className="reuse">Basic Details</h2>      
-          <FormInput label = "Enter First Name " type = "text"/>
-          <FormInput label = "Enter Last Name " type = "text"/>
+          <h2 className="header">Basic Details</h2>      
+          <FormInput label="Enter First Name " type="text"/>
+          <FormInput label="Enter Last Name " type="text"/>
           <div>
             <button className="submit-btn">Submit</button>
           </div>
