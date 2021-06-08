@@ -17,6 +17,15 @@ $input-spacing: 10px;
 }
 
 .label-text {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+}
+
+.label-text-active {
+  position: absolute;
+  top: -21px;
+  left: 1px;
 }
 
 .error-focus {
