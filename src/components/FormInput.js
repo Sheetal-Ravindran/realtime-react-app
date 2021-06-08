@@ -5,7 +5,7 @@ class FormInput extends React.Component {
 
   constructor() {
     super();
-    this.state={ name:'', errorMessage:'', isFocus: false }
+    this.state={ name:'', errorMessage:'', isFocus: false, hasText: false }
     this.onInputChange = this.onInputChange.bind(this);
     this.onFocus = this.onFocus.bind(this);
     this.onBlur = this.onBlur.bind(this);
@@ -23,6 +23,9 @@ class FormInput extends React.Component {
   onInputChange(event) {
     let type=event.target.type;
     let value=event.target.value;
+    if(value) {
+      this.setState({ hasText: true })
+    }
     this.validateField(type, value);
   }
     
@@ -46,7 +49,7 @@ class FormInput extends React.Component {
     }
 
   render()  {  
-    const labelClassName = this.state.isFocus ? "label-text-active" : "label-text";
+    const labelClassName = this.state.isFocus || this.state.hasText ? "label-text-active" : "label-text";
     const renderInput = () => {
       if (this.props.label) {
         return  <div  className="form-group">
