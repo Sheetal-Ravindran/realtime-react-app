@@ -1,9 +1,8 @@
-@import "formInput";
 $highlight: rgb(18, 18, 146);
 $buttonColor: white;
 
-.header  {
- color: $highlight;
+.header {
+  color: $highlight;
 }
 
 .submit-btn {
@@ -19,4 +18,3 @@ $buttonColor: white;
   cursor: pointer;
   border-radius: 8px;
 }
-

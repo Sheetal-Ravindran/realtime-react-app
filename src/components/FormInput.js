@@ -1,4 +1,5 @@
 import React from 'react';
+import './formInput.scss'
 
 class FormInput extends React.Component {
 
