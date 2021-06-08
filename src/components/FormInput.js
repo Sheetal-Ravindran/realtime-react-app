@@ -19,7 +19,6 @@ class FormInput extends React.Component {
 
     let errorMessage='';
     switch(type) {
-
       case 'text':
         if (!value.match(/^[a-zA-Z ]*$/)) {         
           errorMessage='Only Alphabets allowed';
