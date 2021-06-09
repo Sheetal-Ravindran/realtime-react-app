@@ -26,6 +26,9 @@ class FormInput extends React.Component {
     if(value) {
       this.setState({ hasText: true })
     }
+    else{
+      this.setState({ hasText: false })
+    }
     this.validateField(type, value);
   }
     
