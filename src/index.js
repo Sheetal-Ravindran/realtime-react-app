@@ -14,8 +14,8 @@ class App extends React.Component {
           <FormInput label="Enter First Name " type="text"/>
           <FormInput label="Enter Last Name " type="text"/>
           <div>
-            <Button type="Primary"/> 
-            <Button type="Secondary"/>
+            <Button type="Primary" content="Primary" disabled="false"/> 
+            <Button type="Secondary" content="Secondary" disabled="false"/>
           </div>         
       </div>
     );

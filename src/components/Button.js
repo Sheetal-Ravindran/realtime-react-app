@@ -8,7 +8,7 @@ class Button extends React.Component {
       console.log(buttonClassName);
         return (
           <div  className="form-group">
-            <button className={buttonClassName}>{this.props.type}</button>                 
+            <button className={buttonClassName} disabled={this.props.disabled}>{this.props.content}</button>                 
           </div>     
         );
       }

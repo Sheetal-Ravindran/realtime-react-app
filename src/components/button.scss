@@ -1,44 +1,55 @@
-$primaryColor:rgba(17, 17, 17, 0.89);
-$primaryButtonColor: white;
-$primaryHoverColor: rgba(17, 17, 17, 0.712);
-$secondaryColor:rgba(17, 17, 17, 0.192);
-$secondaryButtonColor: black;
-$secondaryHoverColor: rgba(17, 17, 17, 0.048);
+$primaryColorStop1: #16222A;
+$primaryColorStop2: #3A6073;
+$secondaryColorStop1: #abbaab;
+$secondaryColorStop2: #ffffff;
+$boxShadowColor: #eee;
 
 @mixin btn-style{
-  padding: 10px;
-  text-align: center; 
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 6px;
-  cursor: pointer;
-  border-radius: 8px;
+  margin: 10px;
+  padding: 15px 35px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;            
+  box-shadow: 0 0 20px $boxShadowColor;
+  border-radius: 10px;
+  display: block;
 }
 
 .primary {
   @include btn-style;
-  background-color: $primaryColor;
-  color: $primaryButtonColor;
+    background-image: linear-gradient(to right, $primaryColorStop1 0%, $primaryColorStop2  51%, $primaryColorStop1  100%);
+    color: $secondaryColorStop2;
   }
 
 .secondary {
   @include btn-style;
-  background-color: $secondaryColor;
-  color: $secondaryButtonColor;
+    background-image: linear-gradient(to right, $secondaryColorStop1 0%, $secondaryColorStop2  51%, $secondaryColorStop1  100%);
+    color: $primaryColorStop2;
   }
     
 .primary:hover,
-.primary:active {
-  background-color: $primaryHoverColor;
-  border-color:  $primaryHoverColor;
-  color: $primaryButtonColor;   
-  }
+.primary:active { 
+  background-position: right center; 
+  color: $secondaryColorStop2;
+  text-decoration: none;
+}
   
 .secondary:hover,
 .secondary:active {
-  background-color: $secondaryHoverColor;
-  border-color: $secondaryHoverColor;
-  color: $secondaryButtonColor;
+  background-position: right center; 
+  color: $primaryColorStop2;
+  text-decoration: none;
 }
+
+// .primary:disabled,
+// .secondary:disabled {
+//   background-color: #fff;
+//   border-color: #bababa;
+//   color: #bababa;
+//   box-shadow: none;
+//   opacity: 0.7;
+//   cursor: not-allowed;
+//   border: 1px solid;
+// }
 
