@@ -4,10 +4,12 @@ import './button.scss'
 class Button extends React.Component {
     
     render()  {  
-            return (
-            <div  className="form-group">
-              <button className="submit-btn">{this.props.type}</button>                 
-            </div>     
+      const buttonClassName = this.props.type === "Primary" ? "primary" : "secondary";
+      console.log(buttonClassName);
+        return (
+          <div  className="form-group">
+            <button className={buttonClassName}>{this.props.type}</button>                 
+          </div>     
         );
       }
     };

@@ -1,17 +1,44 @@
-$highlight: rgb(18, 18, 146);
-$buttonColor: white;
+$primaryColor:rgba(17, 17, 17, 0.89);
+$primaryButtonColor: white;
+$primaryHoverColor: rgba(17, 17, 17, 0.712);
+$secondaryColor:rgba(17, 17, 17, 0.192);
+$secondaryButtonColor: black;
+$secondaryHoverColor: rgba(17, 17, 17, 0.048);
 
-.submit-btn {
-    background-color: $highlight;
-    border: none;
-    color: $buttonColor;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 8px;
+@mixin btn-style{
+  padding: 10px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 6px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.primary {
+  @include btn-style;
+  background-color: $primaryColor;
+  color: $primaryButtonColor;
+  }
+
+.secondary {
+  @include btn-style;
+  background-color: $secondaryColor;
+  color: $secondaryButtonColor;
+  }
+    
+.primary:hover,
+.primary:active {
+  background-color: $primaryHoverColor;
+  border-color:  $primaryHoverColor;
+  color: $primaryButtonColor;   
   }
   
+.secondary:hover,
+.secondary:active {
+  background-color: $secondaryHoverColor;
+  border-color: $secondaryHoverColor;
+  color: $secondaryButtonColor;
+}
+
