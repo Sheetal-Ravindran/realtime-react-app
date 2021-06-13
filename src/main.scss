@@ -1,6 +1,11 @@
-$highlight: rgb(18, 18, 146);
+$highlight:#3A6073;
+$topBottomSpacing: 30px;
+$rightLeftSpacing:8px;
 
 .header {
   color: $highlight;
+  margin: 10px;
+  display: inline;
+  padding: $topBottomSpacing $rightLeftSpacing $topBottomSpacing $rightLeftSpacing;
 }
 
