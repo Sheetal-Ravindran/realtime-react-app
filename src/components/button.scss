@@ -1,8 +1,12 @@
 $primaryColorStop1: #16222A;
 $primaryColorStop2: #3A6073;
-$secondaryColorStop1: #abbaab;
-$secondaryColorStop2: #ffffff;
-$boxShadowColor: #eee;
+$secondaryColorStop1: #9b989471;
+$secondaryColorStop2: #fdfbfaef;
+$hoverPrimaryColorStop1:#0d151a;
+$hoverPrimaryColorStop2: #2b4755;
+$hoverSecondaryColorStop1: #b8b4b2e3;
+$hoverSecondaryColorStop2: #fdfbfa36;
+$boxShadowColor: #fcf8f8;
 $disableBackgroundColor:#fff;
 $disableColor:#bababa;
 
@@ -15,37 +19,39 @@ $disableColor:#bababa;
   background-size: 200% auto;            
   box-shadow: 0 0 20px $boxShadowColor;
   border-radius: 10px;
-  display: block;
+  display: inline-block;
 }
 
-.primary {
+.button-Primary {
   @include btn-style;
-    background-image: linear-gradient(to right, $primaryColorStop1 0%, $primaryColorStop2  51%, $primaryColorStop1  100%);
+    background-image: linear-gradient($primaryColorStop1 70%, $primaryColorStop2  100%);
+    border: 1px solid $primaryColorStop1;
     color: $secondaryColorStop2;
   }
 
-.secondary {
+.button-Secondary {
   @include btn-style;
-    background-image: linear-gradient(to right, $secondaryColorStop1 0%, $secondaryColorStop2  51%, $secondaryColorStop1  100%);
-    color: $primaryColorStop2;
+    background-image: linear-gradient($secondaryColorStop1 70%, $secondaryColorStop2  100%);
+    border: 1px solid $secondaryColorStop1;
+    color: $primaryColorStop1;
   }
     
-.primary:hover,
-.primary:active { 
-  background-position: right center; 
+.button-Primary:hover,
+.button-Primary:active { 
+  background-image: linear-gradient($hoverPrimaryColorStop1 70%, $hoverPrimaryColorStop2 100%);
   color: $secondaryColorStop2;
   text-decoration: none;
 }
   
-.secondary:hover,
-.secondary:active {
-  background-position: right center; 
-  color: $primaryColorStop2;
+.button-Secondary:hover,
+.button-Secondary:active {
+  background-image: linear-gradient($hoverSecondaryColorStop1 70%, $hoverSecondaryColorStop2 100%);
+  color: $primaryColorStop1;
   text-decoration: none;
 }
 
-.primary:disabled,
-.secondary:disabled {
+.button-Primary:disabled,
+.button-Secondary:disabled {
   background-color: $disableBackgroundColor;
   border-color: $disableColor;
   color: $disableColor;
