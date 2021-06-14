@@ -1,0 +1,34 @@
+$labelhighlight: rgb(18, 18, 146);
+$errorHighlight: red;
+$textcolor: #333;
+$borderColor: #ccc;
+$labelColor: #aaa;
+$input-spacing: 10px;
+
+.form-group {
+  margin-top: 12px;
+  display: inline-block;
+  position: relative;
+}
+
+.input-field {
+  width: 250px;
+  padding: 4px $input-spacing 4px $input-spacing;
+}
+
+.label-text {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+}
+
+.label-text-active {
+  position: absolute;
+  top: -21px;
+  left: 1px;
+}
+
+.error-focus {
+  color: $errorHighlight;
+  font-size: 12px;
+}

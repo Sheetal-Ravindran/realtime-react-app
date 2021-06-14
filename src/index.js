@@ -1,33 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './mysass.scss';
-import PersonalInfo from './PersonalInfo';
+import FormInput from './components/FormInput';
+import './main.scss';
 
 class App extends React.Component {
  
   render() {
+   
     return (
-      <div>
-        <div className="container">
-          <h1>Hello!</h1>
-          <p>This is my first Saas project!.</p>
-        </div>
-        <div className="validation">   
-          <h2 className="reuse">Component Reuse</h2>      
-          <PersonalInfo label = "First" />
-          <PersonalInfo label = "Second" />
-          <button>Submit</button>
-        </div>
-        <div>
-          <h1 className="navigation-title">Nesting Example</h1>
-          <nav className="navigation">
-            <ul>
-              <li><a href="https://google.com">HTML</a></li>
-              <li><a href="https://google.com">CSS</a></li>
-              <li><a href="https://google.com">SASS</a></li>
-            </ul>
-          </nav>
-        </div>
+      <div className="validation"> 
+          <h2 className="header">Basic Details</h2>      
+          <FormInput label="Enter First Name " type="text"/>
+          <FormInput label="Enter Last Name " type="text"/>
+          <div>
+            <button className="submit-btn">Submit</button>
+          </div>
       </div>
     );
   }
