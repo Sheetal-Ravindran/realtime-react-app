@@ -22,42 +22,41 @@ $disableColor:#bababa;
   display: inline-block;
 }
 
-.button-Primary {
+.button-primary {
   @include btn-style;
     background-image: linear-gradient($primaryColorStop1 70%, $primaryColorStop2  100%);
     border: 1px solid $primaryColorStop1;
     color: $secondaryColorStop2;
   }
 
-.button-Secondary {
+.button-secondary {
   @include btn-style;
     background-image: linear-gradient($secondaryColorStop1 70%, $secondaryColorStop2  100%);
     border: 1px solid $secondaryColorStop1;
     color: $primaryColorStop1;
   }
     
-.button-Primary:hover,
-.button-Primary:active { 
+.button-primary:hover,
+.button-primary:active { 
   background-image: linear-gradient($hoverPrimaryColorStop1 70%, $hoverPrimaryColorStop2 100%);
   color: $secondaryColorStop2;
   text-decoration: none;
 }
   
-.button-Secondary:hover,
-.button-Secondary:active {
+.button-secondary:hover,
+.button-secondary:active {
   background-image: linear-gradient($hoverSecondaryColorStop1 70%, $hoverSecondaryColorStop2 100%);
   color: $primaryColorStop1;
   text-decoration: none;
 }
 
-.button-Primary:disabled,
-.button-Secondary:disabled {
+.button-primary:disabled,
+.button-secondary:disabled {
   background-color: $disableBackgroundColor;
-  border-color: $disableColor;
   color: $disableColor;
   box-shadow: none;
   opacity: 0.7;
   cursor: not-allowed;
-  border: 1px solid;
+  border: 1px solid $disableColor;
 }
 
