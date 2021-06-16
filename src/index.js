@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import FormInput from './components/FormInput';
+import Button from './components/Button';
 import './main.scss';
 
 class App extends React.Component {
@@ -13,8 +14,9 @@ class App extends React.Component {
           <FormInput label="Enter First Name " type="text"/>
           <FormInput label="Enter Last Name " type="text"/>
           <div>
-            <button className="submit-btn">Submit</button>
-          </div>
+            <Button type="primary" content="Primary" disabled={false}/> 
+            <Button type="secondary" content="Secondary" disabled={false}/>
+          </div>         
       </div>
     );
   }
