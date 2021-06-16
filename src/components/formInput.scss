@@ -12,23 +12,31 @@ $input-spacing: 10px;
 }
 
 .input-field {
-  width: 250px;
-  padding: 4px $input-spacing 4px $input-spacing;
+  margin: 10px;
+  width: 300px;
+  height: 20px;
+  border-radius: 5px;
+  border: 3px solid $borderColor;
+  padding: 6px $input-spacing 6px $input-spacing;
 }
 
 .label-text {
   position: absolute;
-  top: 3px;
-  left: 4px;
+  top: 8px;
+  left: 8px;
+  margin: 10px;
 }
 
 .label-text-active {
   position: absolute;
   top: -21px;
   left: 1px;
+  margin: 10px;
+  border-radius: 5px;
 }
 
 .error-focus {
   color: $errorHighlight;
   font-size: 12px;
+  margin: 10px;
 }
