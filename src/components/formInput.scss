@@ -15,9 +15,9 @@ $input-spacing: 10px;
   margin: 10px;
   width: 300px;
   height: 20px;
-  border-radius: 5px;
-  border: 3px solid $borderColor;
-  padding: 6px $input-spacing 6px $input-spacing;
+  border-radius: 6px;
+  border: 1px solid $borderColor;
+  padding: 10px $input-spacing 10px $input-spacing;
 }
 
 .label-text {
@@ -25,6 +25,7 @@ $input-spacing: 10px;
   top: 8px;
   left: 8px;
   margin: 10px;
+  color: $labelColor;
 }
 
 .label-text-active {

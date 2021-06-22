@@ -1,58 +1,40 @@
 $primaryColorStop1: #16222A;
 $primaryColorStop2: #3A6073;
-$secondaryColorStop1: #9b989471;
-$secondaryColorStop2: #fdfbfaef;
+$buttonColor: white;
 $hoverPrimaryColorStop1:#0d151a;
 $hoverPrimaryColorStop2: #2b4755;
-$hoverSecondaryColorStop1: #b8b4b2e3;
-$hoverSecondaryColorStop2: #fdfbfa36;
 $boxShadowColor: #fcf8f8;
 $disableBackgroundColor:#fff;
 $disableColor:#bababa;
+$input-spacing: 10px;
 
-@mixin btn-style{
+.button-primary {
   margin: 10px;
-  padding: 15px 35px;
+  width: 320px;
+  height: 50px;
+  padding: 10px 10px 10px 10px;
   text-align: center;
-  text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;            
   box-shadow: 0 0 20px $boxShadowColor;
   border-radius: 10px;
-  display: inline-block;
-}
-
-.button-primary {
-  @include btn-style;
-    background-image: linear-gradient($primaryColorStop1 70%, $primaryColorStop2  100%);
-    border: 1px solid $primaryColorStop1;
-    color: $secondaryColorStop2;
-  }
-
-.button-secondary {
-  @include btn-style;
-    background-image: linear-gradient($secondaryColorStop1 70%, $secondaryColorStop2  100%);
-    border: 1px solid $secondaryColorStop1;
-    color: $primaryColorStop1;
+  display: inline-block; 
+  background: rgb(39, 143, 39);
+  border: 1px solid $primaryColorStop1;
+  color: $buttonColor;
+  font-size: 18px;
   }
     
 .button-primary:hover,
 .button-primary:active { 
-  background-image: linear-gradient($hoverPrimaryColorStop1 70%, $hoverPrimaryColorStop2 100%);
-  color: $secondaryColorStop2;
+  // background-image: linear-gradient($hoverPrimaryColorStop1 70%, $hoverPrimaryColorStop2 100%);
+  background: rgb(33, 104, 71);
+  color: $buttonColor;
   text-decoration: none;
 }
   
-.button-secondary:hover,
-.button-secondary:active {
-  background-image: linear-gradient($hoverSecondaryColorStop1 70%, $hoverSecondaryColorStop2 100%);
-  color: $primaryColorStop1;
-  text-decoration: none;
-}
-
-.button-primary:disabled,
-.button-secondary:disabled {
-  background-color: $disableBackgroundColor;
+.button-primary:disabled {
+  background: rgb(39, 143, 39);
   color: $disableColor;
   box-shadow: none;
   opacity: 0.7;
