@@ -1,6 +1,5 @@
 $labelhighlight: rgb(18, 18, 146);
-$errorHighlight: red;
-$textcolor: #333;
+$highlight: red;
 $borderColor: #ccc;
 $labelColor: #aaa;
 $input-spacing: 10px;
@@ -17,12 +16,17 @@ $input-spacing: 10px;
   height: 20px;
   border-radius: 6px;
   border: 1px solid $borderColor;
-  padding: 10px $input-spacing 10px $input-spacing;
+  padding: $input-spacing $input-spacing $input-spacing $input-spacing;
+}
+
+.input-field:focus{
+  outline-color: $highlight;
 }
 
 .label-text {
+  font-family: 'Calibri';
   position: absolute;
-  top: 8px;
+  top: 11px;
   left: 8px;
   margin: 10px;
   color: $labelColor;
@@ -30,14 +34,17 @@ $input-spacing: 10px;
 
 .label-text-active {
   position: absolute;
-  top: -21px;
-  left: 1px;
+  top: -8px;
+  left: 8px;
   margin: 10px;
   border-radius: 5px;
+  color: $highlight;
+  background-color: white;
+  font-family: 'Calibri'
 }
 
 .error-focus {
-  color: $errorHighlight;
+  color: $highlight;
   font-size: 12px;
   margin: 10px;
 }
