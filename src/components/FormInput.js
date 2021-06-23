@@ -1,5 +1,6 @@
 import React from 'react';
-import './formInput.scss'
+import './formInput.scss';
+import '../pages/Register';
 
 class FormInput extends React.Component {
 
@@ -22,7 +23,8 @@ class FormInput extends React.Component {
 
   onInputChange(event) {
     let type=event.target.type;
-    let value=event.target.value;
+    let value=event.target.value; 
+ 
     if(value) {
       this.setState({ hasText: true })
     }
@@ -37,10 +39,16 @@ class FormInput extends React.Component {
     let errorMessage='';
     switch(type) {
       case 'text':
-        if (!value.match(/^[a-zA-Z ]*$/)) {         
-          errorMessage='Only Alphabets allowed';
+        if (value.length<2) {         
+          errorMessage='Too Short!';
         }
         break;
+      case 'email':
+          const reg = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/
+          if (!value.match(reg)) {         
+            errorMessage='Email must be a valid email address';
+          }
+          break;
       default:
         break;      
     }
@@ -57,7 +65,7 @@ class FormInput extends React.Component {
       if (this.props.label) {
         return  <div  className="form-group">
           <label className={labelClassName}>{this.props.label}</label>
-          <input className="input-field" type={this.props.text} value={this.state.name} onChange={this.onInputChange} onFocus={this.onFocus} onBlur={this.onBlur}/>           
+          <input className="input-field" type={this.props.type} value={this.state.name} onChange={this.onInputChange} onFocus={this.onFocus} onBlur={this.onBlur}/>           
           <br></br>
           <span className="error-focus">{this.state.errorMessage}</span>
           <br></br>     
