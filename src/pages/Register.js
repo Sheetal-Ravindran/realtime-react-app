@@ -9,7 +9,7 @@ class Register extends React.Component {
    
     return (
       <div className="validation">       
-          <FormInput label="First Name " type="text" />
+          <FormInput label="First Name " type="text"  />
           <FormInput label="Last Name " type="text" />
           <FormInput label="Email address " type="email" />
           <FormInput label="Password" type="password" />

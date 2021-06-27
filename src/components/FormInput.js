@@ -6,7 +6,7 @@ class FormInput extends React.Component {
 
   constructor() {
     super();
-    this.state={ name:'', errorMessage:'', isFocus: false, hasText: false }
+    this.state={ name:'', errorMessage:'', isFocus: false, hasText: false, fields:{} }
     this.onInputChange = this.onInputChange.bind(this);
     this.onFocus = this.onFocus.bind(this);
     this.onBlur = this.onBlur.bind(this);
@@ -14,7 +14,10 @@ class FormInput extends React.Component {
   }   
 
   onFocus() {
-    this.setState({ isFocus: true })
+    this.setState({ isFocus: true })  
+    // this.setState({
+    //   errorMessage: this.props.label +' is Required'
+    // });    
   }
 
   onBlur() {
@@ -24,23 +27,27 @@ class FormInput extends React.Component {
   onInputChange(event) {
     let type=event.target.type;
     let value=event.target.value; 
- 
+
     if(value) {
       this.setState({ hasText: true })
     }
     else{
       this.setState({ hasText: false })
     }
+    
     this.validateField(type, value);
+    
   }
     
   validateField(type, value) {
-
     let errorMessage='';
     switch(type) {
-      case 'text':
-        if (value.length<2) {         
+      case 'text':       
+        if (value.length===1) {         
           errorMessage='Too Short!';
+        }
+        if (value.length<1) {         
+          errorMessage= this.props.label +' is Required';
         }
         break;
       case 'email':
@@ -48,6 +55,14 @@ class FormInput extends React.Component {
           if (!value.match(reg)) {         
             errorMessage='Email must be a valid email address';
           }
+          if (value.length<1) {         
+            errorMessage= this.props.label +' is Required';
+          }          
+          break;
+      case 'password':           
+            if (value.length<1) {         
+              errorMessage= this.props.label +' is Required';
+            }
           break;
       default:
         break;      

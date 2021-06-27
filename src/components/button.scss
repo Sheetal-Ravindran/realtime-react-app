@@ -27,7 +27,6 @@ $input-spacing: 10px;
     
 .button-primary:hover,
 .button-primary:active { 
-  // background-image: linear-gradient($hoverPrimaryColorStop1 70%, $hoverPrimaryColorStop2 100%);
   background: rgb(33, 104, 71);
   color: $buttonColor;
   text-decoration: none;
