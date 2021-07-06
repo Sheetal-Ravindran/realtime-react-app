@@ -1,9 +1,6 @@
-$primaryColorStop1: #16222A;
-$primaryColorStop2: #3A6073;
+$primaryColor: rgb(0, 171, 85);
 $buttonColor: white;
-$hoverPrimaryColorStop1:#0d151a;
-$hoverPrimaryColorStop2: #2b4755;
-$boxShadowColor: #fcf8f8;
+$hoverPrimaryColor:rgb(0, 123, 85);
 $disableBackgroundColor:#fff;
 $disableColor:#bababa;
 $input-spacing: 10px;
@@ -12,28 +9,29 @@ $input-spacing: 10px;
   margin: 10px;
   width: 320px;
   height: 50px;
-  padding: 10px 10px 10px 10px;
+  padding: 8px 22px ;
   text-align: center;
   transition: 0.5s;
   background-size: 200% auto;            
-  box-shadow: 0 0 20px $boxShadowColor;
   border-radius: 10px;
   display: inline-block; 
-  background: rgb(39, 143, 39);
-  border: 1px solid $primaryColorStop1;
+  background: $primaryColor;
+  border: 1px solid $primaryColor;
   color: $buttonColor;
-  font-size: 18px;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  font-family: "Public Sans", sans-serif
   }
     
 .button-primary:hover,
 .button-primary:active { 
-  background: rgb(33, 104, 71);
+  background: $hoverPrimaryColor;
   color: $buttonColor;
-  text-decoration: none;
+  border: 1px solid $hoverPrimaryColor
 }
   
 .button-primary:disabled {
-  background: rgb(39, 143, 39);
+  background: $disableBackgroundColor;
   color: $disableColor;
   box-shadow: none;
   opacity: 0.7;

@@ -16,20 +16,25 @@ $input-spacing: 10px;
   height: 20px;
   border-radius: 6px;
   border: 1px solid $borderColor;
-  padding: $input-spacing $input-spacing $input-spacing $input-spacing;
+  padding: 16.5px 14px;
 }
 
 .input-field:focus{
-  outline-color: $highlight;
+  outline:none;
+  border: 2px solid $highlight;
+  border-radius: 6px;
 }
 
 .label-text {
-  font-family: 'Calibri';
+  font-family: "Public Sans", sans-serif;
   position: absolute;
-  top: 11px;
+  top: 15px;
   left: 8px;
   margin: 10px;
   color: $labelColor;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .label-text-active {
@@ -40,12 +45,12 @@ $input-spacing: 10px;
   border-radius: 5px;
   color: $highlight;
   background-color: white;
-  font-family: 'Calibri'
+  font-family: "Public Sans", sans-serif
 }
 
 .error-focus {
   color: $highlight;
   font-size: 12px;
   margin: 10px;
-  font-family: 'Calibri'
+  font-family: "Public Sans", sans-serif
 }
