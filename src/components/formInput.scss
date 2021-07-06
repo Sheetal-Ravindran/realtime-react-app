@@ -9,20 +9,45 @@ $input-spacing: 10px;
   display: inline-block;
   position: relative;
 }
-
-.input-field {
+@mixin inputField {
   margin: 10px;
-  width: 300px;
   height: 20px;
   border-radius: 6px;
   border: 1px solid $borderColor;
   padding: 16.5px 14px;
 }
 
-.input-field:focus{
+.input-field-email,
+.input-field-password {
+  @include inputField;
+  width: 492px;
+}
+
+.input-field-firstName,
+.input-field-lastName{
+  @include inputField;
+  width: 220px;
+}
+
+.input-field-firstName:focus,
+.input-field-lastName:focus,
+.input-field-email:focus,
+.input-field-password:focus {
   outline:none;
   border: 2px solid $highlight;
   border-radius: 6px;
+}
+
+.input-field-hasText-email,
+.input-field-hasText-password {
+  @extend .input-field-email;
+  border: 1px solid $highlight;
+}
+
+.input-field-hasText-firstName,
+.input-field-hasText-lastName {
+  @extend .input-field-firstName;
+  border: 1px solid $highlight;
 }
 
 .label-text {

@@ -15,9 +15,6 @@ class FormInput extends React.Component {
 
   onFocus() {
     this.setState({ isFocus: true })  
-    // this.setState({
-    //   errorMessage: this.props.label +' is Required'
-    // });    
   }
 
   onBlur() {
@@ -76,11 +73,14 @@ class FormInput extends React.Component {
 
   render()  {  
     const labelClassName = this.state.isFocus || this.state.hasText ? "label-text-active" : "label-text";
+    const inputClassName = this.state.hasText ? "input-field-hasText-"+ this.props.name : "input-field-"+ this.props.name;
+    console.log(this.state.hasText);
+    console.log(inputClassName);
     const renderInput = () => {
       if (this.props.label) {
         return  <div  className="form-group">
           <label className={labelClassName}>{this.props.label}</label>
-          <input className="input-field"type={this.props.type} value={this.state.name} onChange={this.onInputChange} onFocus={this.onFocus} onBlur={this.onBlur}/>           
+          <input className={inputClassName} type={this.props.type} value={this.state.name} onChange={this.onInputChange} onFocus={this.onFocus} onBlur={this.onBlur}/>           
           <br></br>
           <span className="error-focus">{this.state.errorMessage}</span>
           <br></br>     

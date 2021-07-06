@@ -10,14 +10,14 @@ class Register extends React.Component {
     return (
       <div className="validation">    
         <div>
-          <FormInput label="First name " type="text"/>          
-          <FormInput label="Last name " type="text"/>
+          <FormInput label="First name " type="text" name="firstName"/>          
+          <FormInput label="Last name " type="text" name="lastName"/>
         </div>
         <div>
-          <FormInput label="Email address " type="email" />
+          <FormInput label="Email address " type="email" name="email"/>
         </div>
         <div>
-          <FormInput label="Password" type="password" />
+          <FormInput label="Password" type="password" name="password"/>
         </div>
         <div>
           <Button type="primary" content="Register" disabled={false}/> 
