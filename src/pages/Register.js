@@ -1,7 +1,6 @@
 import React from 'react';
 import FormInput from '../components/FormInput';
 import Button from '../components/Button';
-import '../main.scss';
 
 class Register extends React.Component {
  
