@@ -3,6 +3,7 @@ $buttonColor: white;
 $hoverPrimaryColor:rgb(0, 123, 85);
 $disableBackgroundColor:#fff;
 $disableColor:#bababa;
+$font: "Public Sans", sans-serif;
 
 .button-primary {
   margin: 10px;
@@ -12,14 +13,14 @@ $disableColor:#bababa;
   text-align: center;
   transition: 0.5s;
   background-size: 200% auto;            
-  border-radius: 10px;
+  border-radius: 8px;
   display: inline-block; 
   background: $primaryColor;
   border: 1px solid $primaryColor;
   color: $buttonColor;
   font-weight: 700;
   font-size: 0.9375rem;
-  font-family: "Public Sans", sans-serif
+  font-family: $font;
   }
     
 .button-primary:hover,

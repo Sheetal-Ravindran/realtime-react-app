@@ -11,7 +11,7 @@ $font:"Public Sans", sans-serif;
 @mixin inputField {
   margin: 10px;
   height: 20px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid $borderColor;
   padding: 16.5px 14px;
 }
@@ -34,7 +34,7 @@ $font:"Public Sans", sans-serif;
 .input-field-password:focus {
   outline:none;
   border: 2px solid $highlight;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .input-field-hasText-email,
@@ -66,7 +66,7 @@ $font:"Public Sans", sans-serif;
   top: -8px;
   left: 8px;
   margin: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   color: $highlight;
   background-color: white;
   font-size: 0.75em;
