@@ -27,39 +27,32 @@ class FormInput extends React.Component {
 
     if(value) {
       this.setState({ hasText: true })
+      this.validateField(type, value); 
+
     }
     else{
       this.setState({ hasText: false })
     }
-    
-    this.validateField(type, value);   
   }
     
   validateField(type, value) {
     let errorMessage='';
+    if (!value.length) {         
+      errorMessage = this.props.label +' is Required';
+    }   
+
     switch(type) {
-      case 'text':       
-        if (value.length===1) {         
-          errorMessage='Too Short!';
-        }
-        if (value.length<1) {         
-          errorMessage= this.props.label +' is Required';
-        }
+      case 'text':             
+        if (value.length === 1) {         
+          errorMessage = 'Too Short!';
+        }      
         break;
       case 'email':
           const reg = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/
           if (!value.match(reg)) {         
             errorMessage='Email must be a valid email address';
-          }
-          if (value.length<1) {         
-            errorMessage= this.props.label +' is Required';
-          }          
-          break;
-      case 'password':           
-            if (value.length<1) {         
-              errorMessage= this.props.label +' is Required';
-            }
-          break;
+          }                 
+          break;    
       default:
         break;      
     }
