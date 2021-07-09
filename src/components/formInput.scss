@@ -16,36 +16,18 @@ $font: "Public Sans", sans-serif;
   padding: 17px 14px;
 }
 
-.input-field-email,
-.input-field-password {
+.input-field {
   @include inputField;
-  width: 492px;
 }
 
-.input-field-firstName,
-.input-field-lastName {
-  @include inputField;
-  width: 220px;
-}
-
-.input-field-firstName:focus,
-.input-field-lastName:focus,
-.input-field-email:focus,
-.input-field-password:focus {
+.input-field:focus {
   outline: none;
   border: 2px solid $highlight;
   border-radius: 8px;
 }
 
-.input-field-hasText-email,
-.input-field-hasText-password {
-  @extend .input-field-email;
-  border: 1px solid $highlight;
-}
-
-.input-field-hasText-firstName,
-.input-field-hasText-lastName {
-  @extend .input-field-firstName;
+.input-field-hasText {
+  @extend .input-field;
   border: 1px solid $highlight;
 }
 
