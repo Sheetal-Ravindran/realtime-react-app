@@ -1,35 +1,35 @@
 $primaryColor: #00ab55;
-$buttonColor:#ffffff;
-$hoverPrimaryColor:#007b55;
-$disableBackgroundColor:#fff;
-$disableColor:#bababa;
+$buttonColor: #ffffff;
+$hoverPrimaryColor: #007b55;
+$disableBackgroundColor: #fff;
+$disableColor: #bababa;
 $font: "Public Sans", sans-serif;
 
 .button-primary {
   margin: 10px;
   width: 522px;
   height: 50px;
-  padding: 8px 22px ;
+  padding: 8px 22px;
   text-align: center;
   transition: 0.5s;
-  background-size: 200% auto;            
+  background-size: 200% auto;
   border-radius: 8px;
-  display: inline-block; 
+  display: inline-block;
   background: $primaryColor;
   border: 1px solid $primaryColor;
   color: $buttonColor;
   font-weight: 700;
   font-size: 0.9375rem;
   font-family: $font;
-  }
-    
+}
+
 .button-primary:hover,
-.button-primary:active { 
+.button-primary:active {
   background: $hoverPrimaryColor;
   color: $buttonColor;
-  border: 1px solid $hoverPrimaryColor
+  border: 1px solid $hoverPrimaryColor;
 }
-  
+
 .button-primary:disabled {
   background: $disableBackgroundColor;
   color: $disableColor;
@@ -38,4 +38,3 @@ $font: "Public Sans", sans-serif;
   cursor: not-allowed;
   border: 1px solid $disableColor;
 }
-
