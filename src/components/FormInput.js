@@ -35,14 +35,19 @@ class FormInput extends React.Component {
     } else {
       this.setState({ hasText: false });
     }
-    this.validateField(type, value);
+    const errorMessage = this.validateField(type, value);
+
+    this.setState({ value: value, errorMessage: errorMessage })
   }
 
   validateField(type, value) {
     let errorMessage = "";
+
     if (!value.length) {
       errorMessage = this.props.label + " is Required";
+      return errorMessage;
     }
+
     switch (type) {
       case "text":
         if (value.length === 1) {
@@ -54,18 +59,12 @@ class FormInput extends React.Component {
         if (!value.match(reg)) {
           errorMessage = "Email must be a valid email address";
         }
-        // if (!value.length) {
-        //   errorMessage = this.props.label +' is Required';
-        // }
         break;
       default:
         break;
     }
 
-    this.setState({
-      value: value,
-      errorMessage: errorMessage,
-    });
+    return errorMessage;
   }
 
   showPassword() {
