@@ -1,58 +1,37 @@
-$primaryColorStop1: #16222A;
-$primaryColorStop2: #3A6073;
-$secondaryColorStop1: #9b989471;
-$secondaryColorStop2: #fdfbfaef;
-$hoverPrimaryColorStop1:#0d151a;
-$hoverPrimaryColorStop2: #2b4755;
-$hoverSecondaryColorStop1: #b8b4b2e3;
-$hoverSecondaryColorStop2: #fdfbfa36;
-$boxShadowColor: #fcf8f8;
+$primaryColor: #00ab55;
+$buttonColor:#ffffff;
+$hoverPrimaryColor:#007b55;
 $disableBackgroundColor:#fff;
 $disableColor:#bababa;
-
-@mixin btn-style{
-  margin: 10px;
-  padding: 15px 35px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;            
-  box-shadow: 0 0 20px $boxShadowColor;
-  border-radius: 10px;
-  display: inline-block;
-}
+$font: "Public Sans", sans-serif;
 
 .button-primary {
-  @include btn-style;
-    background-image: linear-gradient($primaryColorStop1 70%, $primaryColorStop2  100%);
-    border: 1px solid $primaryColorStop1;
-    color: $secondaryColorStop2;
-  }
-
-.button-secondary {
-  @include btn-style;
-    background-image: linear-gradient($secondaryColorStop1 70%, $secondaryColorStop2  100%);
-    border: 1px solid $secondaryColorStop1;
-    color: $primaryColorStop1;
+  margin: 10px;
+  width: 522px;
+  height: 50px;
+  padding: 8px 22px ;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;            
+  border-radius: 8px;
+  display: inline-block; 
+  background: $primaryColor;
+  border: 1px solid $primaryColor;
+  color: $buttonColor;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  font-family: $font;
   }
     
 .button-primary:hover,
 .button-primary:active { 
-  background-image: linear-gradient($hoverPrimaryColorStop1 70%, $hoverPrimaryColorStop2 100%);
-  color: $secondaryColorStop2;
-  text-decoration: none;
+  background: $hoverPrimaryColor;
+  color: $buttonColor;
+  border: 1px solid $hoverPrimaryColor
 }
   
-.button-secondary:hover,
-.button-secondary:active {
-  background-image: linear-gradient($hoverSecondaryColorStop1 70%, $hoverSecondaryColorStop2 100%);
-  color: $primaryColorStop1;
-  text-decoration: none;
-}
-
-.button-primary:disabled,
-.button-secondary:disabled {
-  background-color: $disableBackgroundColor;
+.button-primary:disabled {
+  background: $disableBackgroundColor;
   color: $disableColor;
   box-shadow: none;
   opacity: 0.7;

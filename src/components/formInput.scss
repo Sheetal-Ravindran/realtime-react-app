@@ -1,42 +1,88 @@
-$labelhighlight: rgb(18, 18, 146);
-$errorHighlight: red;
-$textcolor: #333;
-$borderColor: #ccc;
+$highlight: #ff0000;
+$borderColor:  #ccc;
 $labelColor: #aaa;
-$input-spacing: 10px;
+$font:"Public Sans", sans-serif;
 
 .form-group {
   margin-top: 12px;
   display: inline-block;
   position: relative;
 }
-
-.input-field {
+@mixin inputField {
   margin: 10px;
-  width: 300px;
   height: 20px;
-  border-radius: 5px;
-  border: 3px solid $borderColor;
-  padding: 6px $input-spacing 6px $input-spacing;
+  border-radius: 8px;
+  border: 1px solid $borderColor;
+  padding: 16.5px 14px;
+}
+
+.input-field-email,
+.input-field-password {
+  @include inputField;
+  width: 492px;
+}
+
+.input-field-firstName,
+.input-field-lastName{
+  @include inputField;
+  width: 220px;
+}
+
+.input-field-firstName:focus,
+.input-field-lastName:focus,
+.input-field-email:focus,
+.input-field-password:focus {
+  outline:none;
+  border: 2px solid $highlight;
+  border-radius: 8px;
+}
+
+.input-field-hasText-email,
+.input-field-hasText-password {
+  @extend .input-field-email;
+  border: 1px solid $highlight;
+}
+
+.input-field-hasText-firstName,
+.input-field-hasText-lastName {
+  @extend .input-field-firstName;
+  border: 1px solid $highlight;
 }
 
 .label-text {
+  font-family: $font;
   position: absolute;
-  top: 8px;
+  top: 15px;
   left: 8px;
   margin: 10px;
+  color: $labelColor;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .label-text-active {
   position: absolute;
-  top: -21px;
-  left: 1px;
+  top: -8px;
+  left: 8px;
   margin: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
+  color: $highlight;
+  background-color: white;
+  font-size: 0.75em;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: $font;
 }
 
 .error-focus {
-  color: $errorHighlight;
+  color: $highlight;
   font-size: 12px;
   margin: 10px;
+  font-family: $font;
+}
+
+ i {
+  margin-left: -30px;
+  cursor: pointer;
 }
