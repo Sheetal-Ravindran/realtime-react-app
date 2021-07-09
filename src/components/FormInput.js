@@ -77,9 +77,8 @@ class FormInput extends React.Component {
         ? "label-text-active"
         : "label-text";
 
-    const inputClassName = this.state.hasText
-      ? "input-field-hasText"
-      : "input-field";
+    const inputClassName = "input-field" + (this.state.hasText ? " input-field-hasText" : "")
+
 
     const setPasswordType = this.state.hidden ? "password" : "text";
 
