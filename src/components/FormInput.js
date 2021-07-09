@@ -81,50 +81,44 @@ class FormInput extends React.Component {
       : "input-field-" + this.props.name;
     const setPasswordType = this.state.hidden ? "password" : "text";
 
-    const renderInput = () => {
-      if (this.props.type === "password") {
-        return (
-          <div className="form-group">
-            <label className={labelClassName}>{this.props.label}</label>
-            <input
-              className={inputClassName}
-              type={setPasswordType}
-              value={this.state.value}
-              onChange={this.onInputChange}
-              onFocus={this.onFocus}
-              onBlur={this.onBlur}
-            />
-            <i
-              className="bi-eye-slash"
-              id="togglePassword"
-              onClick={this.showPassword}
-            ></i>
-            <br></br>
-            <span className="error-focus">{this.state.errorMessage}</span>
-            <br></br>
-          </div>
-        );
-      } else {
-        return (
-          <div className="form-group">
-            <label className={labelClassName}>{this.props.label}</label>
-            <input
-              className={inputClassName}
-              type={this.props.type}
-              value={this.state.value}
-              onChange={this.onInputChange}
-              onFocus={this.onFocus}
-              onBlur={this.onBlur}
-            />
-            <br></br>
-            <span className="error-focus">{this.state.errorMessage}</span>
-            <br></br>
-          </div>
-        );
+    const renderInput = (isPassword) => {
+      if (isPassword) {
+        return (<>
+          <input
+            className={inputClassName}
+            type={setPasswordType}
+            value={this.state.value}
+            onChange={this.onInputChange}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+          />
+          <i
+            className="bi-eye-slash"
+            id="togglePassword"
+            onClick={this.showPassword}
+          ></i>
+        </>)
       }
-    };
 
-    return renderInput();
+      return (<input
+        className={inputClassName}
+        type={this.props.type}
+        value={this.state.value}
+        onChange={this.onInputChange}
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
+      />)
+    }
+
+    return (
+      <div className="form-group">
+        <label className={labelClassName}>{this.props.label}</label>
+        {renderInput(this.props.type === "password")}
+        <br></br>
+        <span className="error-focus">{this.state.errorMessage}</span>
+        <br></br>
+      </div>
+    );
   }
 }
 
