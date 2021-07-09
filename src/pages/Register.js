@@ -8,11 +8,11 @@ class Register extends React.Component {
     return (
       <div className="validation">
         <div>
-          <FormInput label="First name " type="text" name="firstName" />
+          <FormInput label="First name " type="text" name="firstName" className="firstName" />
           <FormInput label="Last name " type="text" name="lastName" />
         </div>
         <div>
-          <FormInput label="Email address " type="email" name="email" />
+          <FormInput label="Email address " type="email" name="email" className="email" />
         </div>
         <div>
           <FormInput label="Password" type="password" name="password" />
