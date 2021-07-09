@@ -77,8 +77,11 @@ class FormInput extends React.Component {
         ? "label-text-active"
         : "label-text";
 
-    const inputClassName = "input-field" + (this.state.hasText ? " input-field-hasText" : "") + " " + (this.props.className ? this.props.className : "")
+    const inputClassName = "input-field" + (this.state.hasText ? " input-field-hasText" : "")
+    // const inputClassName = `input-field ${(this.state.hasText ? " input-field-hasText" : "")}`
 
+
+    const className = "form-group " + (this.props.className ? this.props.className : "")
 
     const setPasswordType = this.state.hidden ? "password" : "text";
 
@@ -112,7 +115,7 @@ class FormInput extends React.Component {
     }
 
     return (
-      <div className="form-group">
+      <div className={className}>
         <label className={labelClassName}>{this.props.label}</label>
         {renderInput(this.props.type === "password")}
         <br></br>
