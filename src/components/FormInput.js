@@ -6,7 +6,7 @@ class FormInput extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: "",
+      value: "",
       errorMessage: "",
       isFocus: false,
       hasText: false,
@@ -63,7 +63,7 @@ class FormInput extends React.Component {
     }
 
     this.setState({
-      name: value,
+      value: value,
       errorMessage: errorMessage,
     });
   }
@@ -90,7 +90,7 @@ class FormInput extends React.Component {
             <input
               className={inputClassName}
               type={setPasswordType}
-              value={this.state.name}
+              value={this.state.value}
               onChange={this.onInputChange}
               onFocus={this.onFocus}
               onBlur={this.onBlur}
@@ -112,7 +112,7 @@ class FormInput extends React.Component {
             <input
               className={inputClassName}
               type={this.props.type}
-              value={this.state.name}
+              value={this.state.value}
               onChange={this.onInputChange}
               onFocus={this.onFocus}
               onBlur={this.onBlur}
