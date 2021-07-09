@@ -1,18 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Register from './pages/Register';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import Register from "./pages/Register";
 
 class App extends React.Component {
- 
   render() {
-   
-    return (  
-      <form> 
-        <Register/>
-      </form> 
+    return (
+      <form>
+        <Register />
+      </form>
     );
   }
 }
 
-ReactDOM.render(<App/>, document.querySelector('#root'));
+ReactDOM.render(<App />, document.querySelector("#root"));
