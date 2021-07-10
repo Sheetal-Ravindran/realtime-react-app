@@ -1,11 +1,13 @@
-.firstName {
-    border: 1px solid blue
+.firstName,
+.secondName {
+  .input-field {
+    width: 220px;
+  }
 }
 
-.email {
-    border: 1px solid orange;
-
-    label {
-        color: orange;
-    }
+.email,
+.password {
+  .input-field {
+    width: 492px;
+  }
 }
