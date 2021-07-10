@@ -11,6 +11,7 @@ class FormInput extends React.Component {
       isFocus: false,
       hasText: false,
       hidden: true,
+      hasRequiredErrorMessage: false,
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.onFocus = this.onFocus.bind(this);
@@ -37,7 +38,7 @@ class FormInput extends React.Component {
     }
     const errorMessage = this.validateField(type, value);
 
-    this.setState({ value: value, errorMessage: errorMessage })
+    this.setState({ value: value, errorMessage: errorMessage });
   }
 
   validateField(type, value) {
@@ -45,6 +46,7 @@ class FormInput extends React.Component {
 
     if (!value.length) {
       errorMessage = this.props.label + " is Required";
+      this.setState({ hasRequiredErrorMessage: true });
       return errorMessage;
     }
 
@@ -73,46 +75,57 @@ class FormInput extends React.Component {
 
   render() {
     const labelClassName =
-      this.state.isFocus || this.state.hasText
+      (this.state.isFocus || this.state.hasText
         ? "label-text-active"
-        : "label-text";
+        : "label-text") +
+      (this.state.hasRequiredErrorMessage
+        ? " label-text-hasRequiredErrorMessage"
+        : "");
 
-    const inputClassName = "input-field" + (this.state.hasText ? " input-field-hasText" : "")
+    const inputClassName =
+      "input-field" +
+      (this.state.hasText ? " input-field-hasText" : "") +
+      (this.state.hasRequiredErrorMessage
+        ? " input-field-hasRequiredErrorMessage"
+        : "");
     // const inputClassName = `input-field ${(this.state.hasText ? " input-field-hasText" : "")}`
-
-
-    const className = "form-group " + (this.props.className ? this.props.className : "")
+    const className =
+      "form-group " + (this.props.className ? this.props.className : "");
 
     const setPasswordType = this.state.hidden ? "password" : "text";
 
     const renderInput = (isPassword) => {
       if (isPassword) {
-        return (<>
-          <input
-            className={inputClassName}
-            type={setPasswordType}
-            value={this.state.value}
-            onChange={this.onInputChange}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-          />
-          <i
-            className="bi-eye-slash"
-            id="togglePassword"
-            onClick={this.showPassword}
-          ></i>
-        </>)
+        return (
+          <>
+            <input
+              className={inputClassName}
+              type={setPasswordType}
+              value={this.state.value}
+              onChange={this.onInputChange}
+              onFocus={this.onFocus}
+              onBlur={this.onBlur}
+            />
+            <i
+              className="bi-eye-slash"
+              id="togglePassword"
+              onClick={this.showPassword}
+            ></i>
+          </>
+        );
       }
 
-      return (<input
-        className={inputClassName}
-        type={this.props.type}
-        value={this.state.value}
-        onChange={this.onInputChange}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-      />)
-    }
+      return (
+        <input
+          className={inputClassName}
+          type={this.props.type}
+          value={this.state.value}
+          onChange={this.onInputChange}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+        />
+      );
+    };
 
     return (
       <div className={className}>

@@ -8,16 +8,13 @@ $font: "Public Sans", sans-serif;
   display: inline-block;
   position: relative;
 }
-@mixin inputField {
+
+.input-field {
   margin: 10px;
   height: 20px;
   border-radius: 8px;
   border: 1px solid $borderColor;
   padding: 17px 14px;
-}
-
-.input-field {
-  @include inputField;
 }
 
 .input-field:focus {
@@ -26,7 +23,8 @@ $font: "Public Sans", sans-serif;
   border-radius: 8px;
 }
 
-.input-field-hasText {
+.input-field-hasText,
+.input-field-hasRequiredErrorMessage {
   border: 1px solid $highlight;
 }
 
@@ -54,6 +52,9 @@ $font: "Public Sans", sans-serif;
   padding-left: 5px;
   padding-right: 5px;
   font-family: $font;
+}
+.label-text-hasRequiredErrorMessage {
+  color: $highlight;
 }
 
 .error-focus {
