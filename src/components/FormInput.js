@@ -131,9 +131,9 @@ class FormInput extends React.Component {
       <div className={className}>
         <label className={labelClassName}>{this.props.label}</label>
         {renderInput(this.props.type === "password")}
-        <br></br>
-        <span className="error-focus">{this.state.errorMessage}</span>
-        <br></br>
+        <div>
+          <span className="error-focus">{this.state.errorMessage}</span>
+        </div>
       </div>
     );
   }
