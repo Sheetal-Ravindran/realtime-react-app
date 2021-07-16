@@ -11,7 +11,6 @@ class FormInput extends React.Component {
       isFocus: false,
       hasText: false,
       hidden: true,
-      hasRequiredErrorMessage: false,
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.onFocus = this.onFocus.bind(this);
@@ -46,7 +45,6 @@ class FormInput extends React.Component {
 
     if (!value.length) {
       errorMessage = this.props.label + " is Required";
-      this.setState({ hasRequiredErrorMessage: true });
       return errorMessage;
     }
 
@@ -78,17 +76,20 @@ class FormInput extends React.Component {
       (this.state.isFocus || this.state.hasText
         ? "label-text-active"
         : "label-text") +
-      (this.state.hasRequiredErrorMessage
+      (this.state.errorMessage !== ""
         ? " label-text-hasRequiredErrorMessage"
-        : "");
+        : "") +
+      (this.state.errorMessage === "" ? " label-text-hasNoError" : "");
 
     const inputClassName =
       "input-field" +
-      (this.state.hasText ? " input-field-hasText" : "") +
-      (this.state.hasRequiredErrorMessage
-        ? " input-field-hasRequiredErrorMessage"
-        : "");
+      (this.state.hasText || this.state.errorMessage !== ""
+        ? " input-field-hasErrorMsg "
+        : "") +
+      (this.state.errorMessage === "" ? " input-field-hasNoError" : "") +
+      (this.state.isFocus ? " input-field-focus" : "");
     // const inputClassName = `input-field ${(this.state.hasText ? " input-field-hasText" : "")}`
+
     const className =
       "form-group " + (this.props.className ? this.props.className : "");
 

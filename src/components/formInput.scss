@@ -17,15 +17,19 @@ $font: "Public Sans", sans-serif;
   padding: 17px 14px;
 }
 
-.input-field:focus {
+//.input-field:focus
+.input-field-focus {
   outline: none;
-  border: 2px solid $highlight;
+  border: 2px solid #00ab55;
   border-radius: 8px;
 }
 
-.input-field-hasText,
-.input-field-hasRequiredErrorMessage {
+.input-field-hasErrorMsg {
   border: 1px solid $highlight;
+}
+
+.input-field-hasNoError {
+  border: 1px solid $borderColor;
 }
 
 .label-text {
@@ -56,7 +60,9 @@ $font: "Public Sans", sans-serif;
 .label-text-hasRequiredErrorMessage {
   color: $highlight;
 }
-
+.label-text-hasNoError {
+  color: $labelColor;
+}
 .error-focus {
   color: $highlight;
   font-size: 12px;
