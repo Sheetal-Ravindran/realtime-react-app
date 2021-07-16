@@ -77,9 +77,8 @@ class FormInput extends React.Component {
         ? "label-text-active"
         : "label-text") +
       (this.state.errorMessage !== ""
-        ? " label-text-hasRequiredErrorMessage"
-        : "") +
-      (this.state.errorMessage === "" ? " label-text-hasNoError" : "");
+        ? " label-text-hasErrorMessage"
+        : " label-text-hasNoError");
 
     const inputClassName =
       "input-field" +
