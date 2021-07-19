@@ -1,4 +1,4 @@
-$highlight: #ff0000;
+$errorColor: #ff0000;
 $successColor: #00ab55;
 $borderColor: #ccc;
 $labelColor: #aaa;
@@ -25,7 +25,7 @@ $font: "Public Sans", sans-serif;
 }
 
 .input-field-hasErrorMsg {
-  border: 1px solid $highlight;
+  border: 1px solid $errorColor;
 }
 
 .input-field-success {
@@ -58,14 +58,14 @@ $font: "Public Sans", sans-serif;
   font-family: $font;
 }
 .label-text-hasErrorMessage {
-  color: $highlight;
+  color: $errorColor;
 }
 .label-text-success {
   color: $successColor;
 }
 
 .error-focus {
-  color: $highlight;
+  color: $errorColor;
   font-size: 12px;
   margin: 10px;
   font-family: $font;
