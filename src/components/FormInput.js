@@ -76,18 +76,13 @@ class FormInput extends React.Component {
       (this.state.isFocus || this.state.hasText
         ? "label-text-active"
         : "label-text") +
-      (this.state.errorMessage !== ""
-        ? " label-text-hasErrorMessage"
-        : " label-text-hasNoError");
+      (this.state.errorMessage ? " label-text-hasErrorMessage" : "") +
+      (this.state.isFocus && !this.state.errorMessage ? " label-text-success" : "");
 
     const inputClassName =
       "input-field" +
-      (this.state.hasText || this.state.errorMessage !== ""
-        ? " input-field-hasErrorMsg "
-        : "") +
-      (this.state.errorMessage === "" ? " input-field-hasNoError" : "") +
-      (this.state.isFocus ? " input-field-focus" : "");
-    // const inputClassName = `input-field ${(this.state.hasText ? " input-field-hasText" : "")}`
+      (this.state.errorMessage ? " input-field-hasErrorMsg" : " input-field-hasNoError") +
+      (this.state.isFocus && !this.state.errorMessage ? " input-field-success" : "");
 
     const className =
       "form-group " + (this.props.className ? this.props.className : "");

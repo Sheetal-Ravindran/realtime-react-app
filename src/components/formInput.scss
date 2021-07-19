@@ -1,4 +1,5 @@
 $highlight: #ff0000;
+$successColor: #00ab55;
 $borderColor: #ccc;
 $labelColor: #aaa;
 $font: "Public Sans", sans-serif;
@@ -17,10 +18,9 @@ $font: "Public Sans", sans-serif;
   padding: 17px 14px;
 }
 
-//.input-field:focus
-.input-field-focus {
+.input-field:focus {
   outline: none;
-  border: 2px solid #00ab55;
+  border-width: 2px;
   border-radius: 8px;
 }
 
@@ -30,6 +30,10 @@ $font: "Public Sans", sans-serif;
 
 .input-field-hasNoError {
   border: 1px solid $borderColor;
+}
+
+.input-field-success {
+  border: 1px solid $successColor;
 }
 
 .label-text {
@@ -50,7 +54,7 @@ $font: "Public Sans", sans-serif;
   left: 8px;
   margin: 10px;
   border-radius: 8px;
-  color: $highlight;
+  color: $labelColor;
   background-color: white;
   font-size: 0.75em;
   padding-left: 5px;
@@ -60,9 +64,10 @@ $font: "Public Sans", sans-serif;
 .label-text-hasErrorMessage {
   color: $highlight;
 }
-.label-text-hasNoError {
-  color: $labelColor;
+.label-text-success {
+  color: $successColor;
 }
+
 .error-focus {
   color: $highlight;
   font-size: 12px;
