@@ -6,7 +6,7 @@ class FormInput extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: "",
+      value: "",
       errorMessage: "",
       isFocus: false,
       hasText: false,
@@ -35,14 +35,19 @@ class FormInput extends React.Component {
     } else {
       this.setState({ hasText: false });
     }
-    this.validateField(type, value);
+    const errorMessage = this.validateField(type, value);
+
+    this.setState({ value: value, errorMessage: errorMessage });
   }
 
   validateField(type, value) {
     let errorMessage = "";
+
     if (!value.length) {
       errorMessage = this.props.label + " is Required";
+      return errorMessage;
     }
+
     switch (type) {
       case "text":
         if (value.length === 1) {
@@ -54,18 +59,12 @@ class FormInput extends React.Component {
         if (!value.match(reg)) {
           errorMessage = "Email must be a valid email address";
         }
-        // if (!value.length) {
-        //   errorMessage = this.props.label +' is Required';
-        // }
         break;
       default:
         break;
     }
 
-    this.setState({
-      name: value,
-      errorMessage: errorMessage,
-    });
+    return errorMessage;
   }
 
   showPassword() {
@@ -74,23 +73,35 @@ class FormInput extends React.Component {
 
   render() {
     const labelClassName =
-      this.state.isFocus || this.state.hasText
+      (this.state.isFocus || this.state.hasText
         ? "label-text-active"
-        : "label-text";
-    const inputClassName = this.state.hasText
-      ? "input-field-hasText-" + this.props.name
-      : "input-field-" + this.props.name;
+        : "label-text") +
+      (this.state.errorMessage !== ""
+        ? " label-text-hasErrorMessage"
+        : " label-text-hasNoError");
+
+    const inputClassName =
+      "input-field" +
+      (this.state.hasText || this.state.errorMessage !== ""
+        ? " input-field-hasErrorMsg "
+        : "") +
+      (this.state.errorMessage === "" ? " input-field-hasNoError" : "") +
+      (this.state.isFocus ? " input-field-focus" : "");
+    // const inputClassName = `input-field ${(this.state.hasText ? " input-field-hasText" : "")}`
+
+    const className =
+      "form-group " + (this.props.className ? this.props.className : "");
+
     const setPasswordType = this.state.hidden ? "password" : "text";
 
-    const renderInput = () => {
-      if (this.props.type === "password") {
+    const renderInput = (isPassword) => {
+      if (isPassword) {
         return (
-          <div className="form-group">
-            <label className={labelClassName}>{this.props.label}</label>
+          <>
             <input
               className={inputClassName}
               type={setPasswordType}
-              value={this.state.name}
+              value={this.state.value}
               onChange={this.onInputChange}
               onFocus={this.onFocus}
               onBlur={this.onBlur}
@@ -100,32 +111,31 @@ class FormInput extends React.Component {
               id="togglePassword"
               onClick={this.showPassword}
             ></i>
-            <br></br>
-            <span className="error-focus">{this.state.errorMessage}</span>
-            <br></br>
-          </div>
-        );
-      } else {
-        return (
-          <div className="form-group">
-            <label className={labelClassName}>{this.props.label}</label>
-            <input
-              className={inputClassName}
-              type={this.props.type}
-              value={this.state.name}
-              onChange={this.onInputChange}
-              onFocus={this.onFocus}
-              onBlur={this.onBlur}
-            />
-            <br></br>
-            <span className="error-focus">{this.state.errorMessage}</span>
-            <br></br>
-          </div>
+          </>
         );
       }
+
+      return (
+        <input
+          className={inputClassName}
+          type={this.props.type}
+          value={this.state.value}
+          onChange={this.onInputChange}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+        />
+      );
     };
 
-    return renderInput();
+    return (
+      <div className={className}>
+        <label className={labelClassName}>{this.props.label}</label>
+        {renderInput(this.props.type === "password")}
+        <div>
+          <span className="error-focus">{this.state.errorMessage}</span>
+        </div>
+      </div>
+    );
   }
 }
 
