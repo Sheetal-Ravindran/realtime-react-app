@@ -100,6 +100,7 @@ class FormInput extends React.Component {
               onChange={this.onInputChange}
               onFocus={this.onFocus}
               onBlur={this.onBlur}
+              id={this.props.name}
             />
             <i
               className="bi-eye-slash"
@@ -118,13 +119,14 @@ class FormInput extends React.Component {
           onChange={this.onInputChange}
           onFocus={this.onFocus}
           onBlur={this.onBlur}
+          id={this.props.name}
         />
       );
     };
 
     return (
       <div className={className}>
-        <label className={labelClassName}>{this.props.label}</label>
+        <label className={labelClassName} htmlFor={this.props.name}>{this.props.label}</label>
         {renderInput(this.props.type === "password")}
         <div>
           <span className="error-focus">{this.state.errorMessage}</span>
