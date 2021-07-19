@@ -81,7 +81,7 @@ class FormInput extends React.Component {
 
     const inputClassName =
       "input-field" +
-      (this.state.errorMessage ? " input-field-hasErrorMsg" : " input-field-hasNoError") +
+      (this.state.errorMessage ? " input-field-hasErrorMsg" : "") +
       (this.state.isFocus && !this.state.errorMessage ? " input-field-success" : "");
 
     const className =
