@@ -84,8 +84,8 @@ class FormInput extends React.Component {
       (this.state.errorMessage ? " input-field-hasErrorMsg" : "") +
       (this.state.isFocus && !this.state.errorMessage ? " input-field-success" : "");
 
-    const className =
-      "form-group " + (this.props.className ? this.props.className : "");
+    // const className =
+    //   "form-group " + (this.props.className ? this.props.className : "");
 
     const setPasswordType = this.state.hidden ? "password" : "text";
 
@@ -125,11 +125,13 @@ class FormInput extends React.Component {
     };
 
     return (
-      <div className={className}>
-        <label className={labelClassName} htmlFor={this.props.name}>{this.props.label}</label>
-        {renderInput(this.props.type === "password")}
-        <div>
-          <span className="error-focus">{this.state.errorMessage}</span>
+      <div className={this.props.className}>
+        <div className="form-group">
+          <label className={labelClassName} htmlFor={this.props.name}>{this.props.label}</label>
+          {renderInput(this.props.type === "password")}
+          <div>
+            <span className="error-focus">{this.state.errorMessage}</span>
+          </div>
         </div>
       </div>
     );

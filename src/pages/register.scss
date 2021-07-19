@@ -1,7 +1,7 @@
 .firstName,
 .secondName {
-  .input-field {
-    width: 220px;
+  .form-group {
+    width: 50%;
   }
   // .input-field:focus {
   //   border: 1px solid red;
@@ -10,7 +10,12 @@
 
 .email,
 .password {
-  .input-field {
-    width: 492px;
+  .form-group {
+    width: 100%;
   }
+}
+
+.content {
+  width: 50%;
+  margin: auto;
 }

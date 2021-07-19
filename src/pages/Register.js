@@ -6,7 +6,7 @@ import "./register.scss";
 class Register extends React.Component {
   render() {
     return (
-      <div className="validation">
+      <div className="content">
         <div>
           <FormInput
             label="First name "
@@ -14,6 +14,8 @@ class Register extends React.Component {
             name="firstName"
             className="firstName"
           />
+        </div>
+        <div>
           <FormInput
             label="Last name "
             type="text"
