@@ -1,16 +1,21 @@
-.firstName,
+.firstName {
+  .form-group {
+    float: left;
+    width: 45%;
+  }
+}
+
 .secondName {
   .form-group {
-    width: 50%;
+    float: right;
+    width: 45%;
   }
-  // .input-field:focus {
-  //   border: 1px solid red;
-  // }
 }
 
 .email,
 .password {
   .form-group {
+    float: left;
     width: 100%;
   }
 }
