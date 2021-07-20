@@ -77,12 +77,16 @@ class FormInput extends React.Component {
         ? "label-text-active"
         : "label-text") +
       (this.state.errorMessage ? " label-text-hasErrorMessage" : "") +
-      (this.state.isFocus && !this.state.errorMessage ? " label-text-success" : "");
+      (this.state.isFocus && !this.state.errorMessage
+        ? " label-text-success"
+        : "");
 
     const inputClassName =
       "input-field" +
       (this.state.errorMessage ? " input-field-hasErrorMsg" : "") +
-      (this.state.isFocus && !this.state.errorMessage ? " input-field-success" : "");
+      (this.state.isFocus && !this.state.errorMessage
+        ? " input-field-success"
+        : "");
 
     // const className =
     //   "form-group " + (this.props.className ? this.props.className : "");
@@ -100,7 +104,7 @@ class FormInput extends React.Component {
               onChange={this.onInputChange}
               onFocus={this.onFocus}
               onBlur={this.onBlur}
-              id={this.props.name}
+              id={this.props.id}
             />
             <i
               className="bi-eye-slash"
@@ -119,7 +123,7 @@ class FormInput extends React.Component {
           onChange={this.onInputChange}
           onFocus={this.onFocus}
           onBlur={this.onBlur}
-          id={this.props.name}
+          id={this.props.id}
         />
       );
     };
@@ -127,7 +131,9 @@ class FormInput extends React.Component {
     return (
       <div className={this.props.className}>
         <div className="form-group">
-          <label className={labelClassName} htmlFor={this.props.name}>{this.props.label}</label>
+          <label className={labelClassName} htmlFor={this.props.id}>
+            {this.props.label}
+          </label>
           {renderInput(this.props.type === "password")}
           <div>
             <span className="error-focus">{this.state.errorMessage}</span>

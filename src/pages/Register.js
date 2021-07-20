@@ -11,7 +11,7 @@ class Register extends React.Component {
           <FormInput
             label="First name "
             type="text"
-            name="firstName"
+            id="firstName"
             className="firstName"
           />
         </div>
@@ -19,7 +19,7 @@ class Register extends React.Component {
           <FormInput
             label="Last name "
             type="text"
-            name="lastName"
+            id="lastName"
             className="secondName"
           />
         </div>
@@ -27,7 +27,7 @@ class Register extends React.Component {
           <FormInput
             label="Email address "
             type="email"
-            name="email"
+            id="email"
             className="email"
           />
         </div>
@@ -35,7 +35,7 @@ class Register extends React.Component {
           <FormInput
             label="Password"
             type="password"
-            name="password"
+            id="password"
             className="password"
           />
         </div>
