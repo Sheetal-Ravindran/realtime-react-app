@@ -12,11 +12,12 @@ $font: "Public Sans", sans-serif;
 
 .input-field {
   width: 100%;
-  margin: 10px;
-  height: 20px;
+  margin: 10px 0;
+  height: 54px;
   border-radius: 8px;
   border: 1px solid $borderColor;
   padding: 17px 14px;
+  box-sizing: border-box;
 }
 
 .input-field:focus {
