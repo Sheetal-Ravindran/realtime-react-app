@@ -12,3 +12,10 @@ export const getAllSongs = () => {
     type: "GET_SONGS",
   };
 };
+
+export const addSong = (song) => {
+  return {
+    type: "ADD_SONG",
+    payload: song,
+  };
+};
