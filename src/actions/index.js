@@ -6,3 +6,9 @@ export const selectSong = (song) => {
     payload: song,
   };
 };
+
+export const getAllSongs = () => {
+  return {
+    type: "GET_SONGS",
+  };
+};
