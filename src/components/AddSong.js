@@ -27,8 +27,6 @@ class AddSong extends Component {
   }
 
   addSong() {
-    console.log(this.state.title);
-    console.log(this.state.duration);
     this.props.addSong({
       title: this.state.title,
       duration: this.state.duration,

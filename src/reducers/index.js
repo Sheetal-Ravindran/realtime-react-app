@@ -13,7 +13,9 @@ const songsReducer = (songs = [], action) => {
   }
   if (action.type === "ADD_SONG") {
     const newSongList = JSON.parse(JSON.stringify(songs));
-    newSongList.push(action.payload);
+    if (action.payload.title && action.payload.duration) {
+      newSongList.push(action.payload);
+    }
     return newSongList;
   }
   return songs;
