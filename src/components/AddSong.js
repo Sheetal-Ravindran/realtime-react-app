@@ -35,20 +35,24 @@ class AddSong extends Component {
   render() {
     return (
       <div>
-        <input
-          className="input-field"
-          type="text"
-          onChange={this.titleChange}
-          name="titleText"
-          placeholder="title"
-        ></input>
-        <input
-          className="input-field"
-          type="text"
-          name="durationText"
-          onChange={this.durationChange}
-          placeholder="duration"
-        ></input>
+        <div className="ui input">
+          <input
+            className="input-text"
+            type="text"
+            onChange={this.titleChange}
+            name="titleText"
+            placeholder="Title"
+          ></input>
+        </div>
+        <div className="ui input">
+          <input
+            className="input-text"
+            type="text"
+            name="durationText"
+            onChange={this.durationChange}
+            placeholder="Duration"
+          ></input>
+        </div>
         <button
           className="ui button primary"
           //   onClick={() =>
