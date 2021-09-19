@@ -12,6 +12,7 @@ const songsReducer = (songs = [], action) => {
     return songsList;
   }
   if (action.type === "ADD_SONG") {
+    console.log(songs);
     const newSongList = JSON.parse(JSON.stringify(songs));
     if (action.payload.title && action.payload.duration) {
       newSongList.push(action.payload);
@@ -23,13 +24,27 @@ const songsReducer = (songs = [], action) => {
 
 const selectedSongReducer = (selectedSong = null, action) => {
   if (action.type === "SONG_SELECTED") {
+    console.log(action);
     return action.payload;
   }
-
   return selectedSong;
+};
+
+const deleteSongReducer = (songs = [], action) => {
+  if (action.type === "GET_SONGS") {
+    return songsList;
+  }
+  if (action.type === "DELETE_SONG") {
+    const newSongList = songs.filter(
+      (song) => song.title !== action.payload.title
+    );
+    return newSongList;
+  }
+  return songs;
 };
 
 export default combineReducers({
   songs: songsReducer,
   selectedSong: selectedSongReducer,
+  deleteSong: deleteSongReducer,
 });

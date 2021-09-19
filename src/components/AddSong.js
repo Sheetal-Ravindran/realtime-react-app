@@ -50,6 +50,7 @@ class AddSong extends Component {
           placeholder="duration"
         ></input>
         <button
+          className="ui button primary"
           //   onClick={() =>
           //     this.props.addSong({ title: "Song1", duration: "3:45" })
           //   }
