@@ -26,7 +26,7 @@ class FormInput extends React.Component {
     this.setState({ isFocus: false });
   }
 
-  onInputChange(event) {
+  onInputChange = (event) => {
     let type = event.target.type;
     let value = event.target.value;
 
@@ -38,7 +38,8 @@ class FormInput extends React.Component {
     const errorMessage = this.validateField(type, value);
 
     this.setState({ value: value, errorMessage: errorMessage });
-  }
+    this.props.handleInput(event.target.value);
+  };
 
   validateField(type, value) {
     let errorMessage = "";
